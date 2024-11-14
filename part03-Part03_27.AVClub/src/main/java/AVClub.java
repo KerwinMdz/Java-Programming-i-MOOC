@@ -10,9 +10,12 @@ public class AVClub {
             if(input.equals("")){
                 break;
             }
+            String [] splitInput = input.split(" ");
+        for(int i = 0; i < splitInput.length; i++){
             if(input.contains("av")){
-                System.out.println(input);
+            System.out.println(splitInput[i]);
             }
+        }
         }
 
 
