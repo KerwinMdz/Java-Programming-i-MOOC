@@ -16,19 +16,29 @@ public class GuestListFromAFile {
         System.out.println("");
 
         System.out.println("Enter names, an empty line quits.");
-        while (true) {
+        try(Scanner fileReader = new Scanner(Paths.get(file))){
+            while (fileReader.hasNextLine()) {
+                list.add(fileReader.nextLine());
+            }
+            
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+            while (true) {
+            
             String name = scanner.nextLine();
             if (name.isEmpty()) {
                 break;
             }
-
+            
             if (list.contains(name)) {
                 System.out.println("The name is on the list.");
             } else {
                 System.out.println("The name is not on the list.");
             }
-        }
 
+        }
         System.out.println("Thank you!");
-    }
+    
+}
 }
