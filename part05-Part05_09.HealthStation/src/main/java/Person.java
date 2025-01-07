@@ -8,12 +8,14 @@ public class Person {
     private int age;
     private int height;
     private int weight;
+    //private int weighCount;
 
     public Person(String name, int age, int height, int weight) {
         this.name = name;
         this.age = age;
         this.height = height;
         this.weight = weight;
+        //this.weighCount = 0;
     }
 
     public void printPerson() {
