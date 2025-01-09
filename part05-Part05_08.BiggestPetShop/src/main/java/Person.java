@@ -19,7 +19,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return this.nimi;
+        return this.name + ", has a fired called " + pet.getName() + " (" + pet.getBreed() +")";
     }
 
 }
