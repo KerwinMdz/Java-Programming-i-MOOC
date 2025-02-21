@@ -32,5 +32,32 @@ public class SimpleDate {
 
         return false;
     }
+    //P1 - Increade day by one
+    public void advance(){
+        this.day = this.day + 1;
+        if(this.day > 30 && this.month < 12){
+            this.day = 1;
+            this.month = this.month + 1;
+        } else if (this.day > 30 && this.month >= 12){
+            this.day = 1;
+            this.month = 1;
+            this.year = this.year + 1;
+        }
+    } 
+    //P2 - Increase by how many days passed in method parameter
+    public void advance(int howManyDays){
+        for(int i = 0; i < howManyDays; i++){
+            this.advance();
+        }
+    }
+    public SimpleDate afterNumberOfDays(int days) {
+        SimpleDate newDate = new SimpleDate(this.day, this.month, this.year);
+        
+        newDate.advance(days);
 
-}
+        return newDate;
+    }
+
+   
+    }
+
