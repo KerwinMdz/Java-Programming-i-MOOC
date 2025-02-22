@@ -23,6 +23,13 @@ public class Money {
         return this.cents;
     }
 
+    public Money plus(Money addition) {
+        Money newMoney = new Money(this.euros + addition.euros, this.cents + addition.cents); // create a new Money object that has the correct worth
+            
+        // return the new Money object
+        return newMoney;
+    }
+
     public String toString() {
         String zero = "";
         if (this.cents < 10) {
